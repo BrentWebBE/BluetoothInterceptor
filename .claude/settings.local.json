@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cargo check *)",
+      "Bash(hciconfig)",
+      "Bash(rfkill list *)",
+      "Bash(timeout 12 hcitool inq)",
+      "Bash(bluetoothctl --version)",
+      "Bash(dpkg -l bluez)",
+      "Bash(pacman -Q bluez)",
+      "Bash(rpm -q bluez)",
+      "Read(//usr/**)",
+      "Read(//usr/bin/**)",
+      "Bash(pacman -Ql bluez)",
+      "Bash(systemctl status *)",
+      "Bash(pacman -Sg base base-devel)",
+      "Bash(pacman -Ss bluez)",
+      "Bash(timeout 5 bluetoothctl -- devices)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(timeout 3 bluetoothctl show)",
+      "Bash(systemctl is-active *)",
+      "Bash(timeout 5 bluetoothctl show)",
+      "Bash(timeout 5 hcitool dev)",
+      "Bash(pacman -Ql bluez-utils)",
+      "Bash(pacman -Qo /usr/bin/hcieventmask)",
+      "Bash(pacman -Ss hcitool)",
+      "Bash(timeout 5 bluetoothctl -- info 74:40:BB:BC:A9:A6)",
+      "Bash(pacman -Ql bluez-deprecated-tools)",
+      "Bash(timeout 5 bluetoothctl scan on)",
+      "Bash(timeout 5 bluetoothctl devices)",
+      "Bash(timeout 5 bluetoothctl scan off)",
+      "Bash(timeout 5 bluetoothctl paired-devices)",
+      "Bash(timeout 5 bluetoothctl list)",
+      "Bash(timeout 5 bash -c 'bluetoothctl scan on 2>/dev/null & echo \"backgrounded PID: $!\"')",
+      "Bash(time bash -c 'bluetoothctl scan on 2>/dev/null & sleep 4; bluetoothctl scan off 2>/dev/null; bluetoothctl -- devices' 2>&1)",
+      "Workflow(deep-research)"
+    ]
+  }
+}

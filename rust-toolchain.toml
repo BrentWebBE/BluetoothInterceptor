@@ -1,0 +1,5 @@
+[toolchain]
+# Pin a recent stable toolchain. Edition 2024 requires >= 1.85; 1.97 is the
+# current stable at time of writing. `cargo` will fetch this automatically.
+channel = "stable"
+components = ["rustfmt", "clippy"]

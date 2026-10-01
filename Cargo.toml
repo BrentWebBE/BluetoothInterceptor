@@ -1,0 +1,41 @@
+[package]
+name = "blegatt-mitm"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Educational BLE GATT man-in-the-middle proxy built on BlueZ (bluer)."
+license = "MIT"
+readme = "README.md"
+
+[[bin]]
+name = "blegatt-mitm"
+path = "src/main.rs"
+
+[dependencies]
+# Official BlueZ D-Bus bindings. The "bluetoothd" feature exposes the high-level
+# Session/Adapter/GATT/advertising API used throughout this tool.
+bluer = { version = "0.17", features = ["bluetoothd"] }
+
+# Async runtime.
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "io-std", "io-util", "net", "signal", "sync", "time"] }
+futures = "0.3"
+
+# CLI.
+clap = { version = "4", features = ["derive"] }
+
+# Errors.
+anyhow = "1"
+thiserror = "2"
+
+# Structured logging.
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# JSON event stream over TCP.
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true

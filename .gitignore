@@ -1,8 +1,5 @@
-# C variant (outdated, not in use)
-interceptor/
-
 # Rust build artifacts
-btintercept/target/
+/target/
 
 # Client dependencies
 client/node_modules/
